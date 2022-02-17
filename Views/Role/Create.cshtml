@@ -1,0 +1,26 @@
+﻿@model Microsoft.AspNet.Identity.EntityFramework.IdentityRole
+
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+<div class="jumbotron">
+    <h1>Can Only be Accessed by The Admin</h1>
+
+</div>
+<div class="section-padding">
+    <h2>Create</h2>
+
+    @using (Html.BeginForm())
+            {
+                <table class="table table-bordered">
+                    <tr>
+                        <td>Enter Role Name to be Created:</td>
+                        <td>@Html.EditorFor(m => m.Name)</td>
+                    </tr>
+                </table>
+                <input type="submit" value="Create Role" />
+            }
+</div>

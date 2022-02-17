@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Microsoft.AspNet.Identity.EntityFramework.IdentityRole>
+
+
+<div class="jumbotron">
+    <h1>Can Only be Accessed by The Admin</h1>
+
+</div>
+<div class="section-padding">
+    <br /> <br />
+    <br /> <br />
+
+    <section class="col-sm-6">
+        <table class="table-bordered">
+            @Html.ActionLink("Create Roles", "Create", "Role", new { @class = "btn btn-primary btn-sm btn-block" })
+        </table>
+    </section>
+
+    
+    <section class="col-sm-6">
+        <table class="table-bordered">
+            @Html.ActionLink("Assign Role to User", "RegisterRole", "Account", new { @class = "btn btn-primary btn-sm btn-block" })
+        </table>
+    </section>
+
+    <br /> <br />
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th>Role Names</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>@item.Name</th>
+            </tr>
+        }
+    </table>
+</div>
